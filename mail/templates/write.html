@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %} Write mail {% endblock %}
+
+{% block content %}
+    <style>
+        .output_information{
+            display: flex;
+            align-items: right;
+            flex-direction: column;
+            padding-bottom: 20px;
+            background-color: black;
+            width: 500px;
+            font-family: 'Dancing Script', cursive, bold;
+            font-size: 18px;
+        }
+        .user_mail{
+            background: 0;
+            border: 0;
+            outline: none;
+            width: 80vw;
+            max-width: 400px;
+            font-size: 1.5em;
+            transition: padding 0.3s 0.2s ease;
+            color: white;
+            
+        }
+        .reciver_mail{
+            
+            background: 0;
+            border: 0;
+            outline: none;
+            width: 80vw;
+            max-width: 400px;
+            font-size: 1.5em;
+            transition: padding 0.3s 0.2s ease;
+            color: white;
+        }
+
+        .title_of_mail{
+            
+            background: 0;
+            border: 0;
+            outline: none;
+            width: 80vw;
+            max-width: 400px;
+            font-size: 1.5em;
+            transition: padding 0.3s 0.2s ease;
+            color: white;
+
+        }
+
+        .writen_mail{
+            background: 0;
+            border: 0;
+            outline: none;
+            width: 80vw;
+            max-width: 600px;
+            font-size: 1.5em;
+            transition: padding 0.3s 0.2s ease;
+            color: white;
+            margin-top: 5px;
+            height: 350px;
+        }
+        .send_email_button {
+            margin-top: 20px;
+            border-radius: 50px;
+            position: relative;
+            background-color: #cb7b18;
+            border: none;
+            font-size: 16px;
+            color: #FFFFFF;
+            padding: 20px;
+            width: 50%;
+            text-align: center;
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .send_email_button:after {
+            content: "";
+            background: #f1f1f1;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .send_email_button:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+    </style>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="output_information">
+            {{ form.as_p }}
+            <button class='send_email_button' type="submit">Send</button>
+        </div>
+    </form>
+
+{% endblock %}
+
