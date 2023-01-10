@@ -35,17 +35,20 @@ class InfoFromUser(forms.ModelForm):
         ]
 
 class InfoFromRecivedUser(forms.ModelForm):
-    recived_subject = forms.EmailField(max_length=100,  label='',
+    recived_subject = forms.CharField(max_length=100,  
+    label='Title',
     widget=forms.Textarea(attrs={
         'class': 'recived_subject',
     }))
-    recived_from = forms.EmailField(max_length=100,  label='',
+    recived_from = forms.EmailField(max_length=100,  
+    label='From',
     widget=forms.Textarea(attrs={
-        'class': 'recived_subject',
+        'class': 'recived_from',
     }))
-    recived_content = forms.CharField(max_length=100,  label='',
+    recived_content = forms.CharField(max_length=5000,  
+    label='Content',
     widget=forms.Textarea(attrs={
-        'class': 'recived_subject',
+        'class': 'recived_content',
     }))
 
     class Meta:
