@@ -15,36 +15,34 @@
             font-family: 'Dancing Script', cursive, bold;
             font-size: 18px;
             color: white;
+            white-space: nowrap;
+
+
+            
         }
-        .recived_subject{
-            height: 25px;
+        li{
+            height: 30px;
             list-style: none;
+
+            
         }
-        .recived_from{
-            height: 25px;
-            list-style: none;
-        }
-        .recived_content{
-            height: 100px;
-            list-style: none;
-        }
+
     </style>
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        <div class="output_recived_information">
+        {% for f,s,b in mycontentlist %}
+            <div class="output_recived_information">
             
-            <li class="recived_subject">
-                From: {{from}}
-            </li>
+                <li id="fromid" class="recived_subject">
+                    From: {{f}}
+                </li>
+                <li id="titleid" class="recived_from">
+                    Title: {{s}}
+                </li>
+                <li id="bodyid" class="recived_content">
+                    Content: {{b}}
+                </li>
+            </div>
+        {% endfor %}
 
-            <li class="recived_from">
-                Title: {{subject}}
-            </li>
-            <li class="recived_content">
-                Content: {{content}}
-            </li>
-        </div>
-    </form>
 
 {% endblock %}

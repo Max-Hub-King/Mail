@@ -1,0 +1,35 @@
+{% extends 'register/register.html' %}
+
+{%block title%}login
+{%endblock%}
+     
+{%block content%}
+
+    <style>
+        .form-group{
+            color: white;
+            font-family: 'Dancing Script', cursive, bold;
+            font-size: 20px;
+        }
+        p{
+            color:white;
+            font-family: 'Dancing Script', cursive, bold;
+            font-size: 18px;
+        }
+        a{
+            color: orange;
+            font-family: 'Dancing Script', cursive, bold;
+            font-size: 18px;
+        }
+
+    </style>
+
+
+    <form method="post" class="from-group">
+        {% load crispy_forms_tags %}
+        {% csrf_token %}
+        {{form|crispy}}
+	<p>Don't have an accoount? Create one <a href="/register">here</a></p>
+	<button type="submit" class="btn btn-warning">Login</button>	
+    </form>
+{%endblock%}

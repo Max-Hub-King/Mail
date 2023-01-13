@@ -1,5 +1,6 @@
 from django import forms
 from .models import UserInformation, RecivedInformation
+from register.forms import RegisterForm
 
 class InfoFromUser(forms.ModelForm):
     user_email = forms.EmailField(max_length=100, required=True, label='',
