@@ -21,7 +21,7 @@ def WriteMail(request):
     if request.method == "POST":
 
         email_sender = request.POST.get['email']
-        email_password = 'dbbkbvajkdgcrygf'
+        email_password = ''
 
         email_reciver = request.POST['reciver_email']
 
@@ -45,8 +45,8 @@ def WriteMail(request):
 
 def AllSendedMail(request):
     imap_server = 'imap.gmail.com'
-    email_address = 'dorchynets1999@gmail.com'
-    password = 'dbbkbvajkdgcrygf'
+    email_address = ''
+    password = ''
     content_from = []
     content_title = []
     content_body = []
